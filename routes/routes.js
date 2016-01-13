@@ -55,6 +55,7 @@ var postEvaluate = function(req, res) {
 
 /**
  * Tests hard-coded pairs of input strings for anagrams.
+ * Results can only be viewed from the server.
  */
 var getTest = function(req, res) {
 	var trueTests = [['hello', 'olleh'], 

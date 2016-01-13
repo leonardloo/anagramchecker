@@ -8,14 +8,10 @@ app.use(express.cookieParser());
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.get('/', function(req, res) {
-    res.render("index", {checked: false, error: false});
-});
-
 app.get('/test', routes.get_test);
 
 app.get('/*', function(req, res) {
-    res.redirect('/', {checked: false, error: false});
+    res.render("index", {checked: false, error: false});
 });
 
 app.post('/evaluate', routes.post_evaluate);

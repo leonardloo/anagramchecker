@@ -1,0 +1,61 @@
+<html>
+<head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<title>Anagram Checker for Duolingo</title>
+
+</head>
+
+<body>
+
+<% if (checked) { %>
+
+<% if (isAnagram) { %>
+<div class="alert alert-success"><center><%= message %></center></div>
+<% } else { %>
+<div class="alert alert-danger"><center><%= message %></center></div>
+
+<% }} %>
+
+<form action="/evaluate" method="POST">
+<center>
+
+<div class="row">
+<div class="col-md-12"><h1>Anagram Checker</h1></div>
+</div>
+<div class="row">
+<div class="col-md-12"><i class="glyphicon glyphicon-info-sign"></i> Checks if two <u>case-insensitive</u> and <u>whitespace-insensitive</u> strings are anagrams</div>
+</div>
+
+<br/>
+
+<div class="row">
+<div class="col-md-1"></div>
+<div class="col-md-5"><input class="form-control" type="text" name="string1" placeholder="i.e. hello"></div>
+<div class="col-md-5"><input class="form-control" type="text" name="string2" placeholder="i.e. olleh"></div>
+<div class="col-md-1"></div>
+</div>
+
+<br/>
+
+<div class="row">
+<div class="col-md-1"></div>
+<div class="col-md-10"><button style="display:block; width:100%;" type="submit" class="btn btn-success">Check</button></div>
+<div class="col-md-1"></div>
+</div>
+
+<br/>
+
+<% if (!checked && error) { %>
+<div class="alert alert-warning"><center>Please fill in both strings.</center></div>
+<% } %>
+
+</center>
+</form>
+
+</body>
+
+</html>
